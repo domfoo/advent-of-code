@@ -1,0 +1,17 @@
+[project]
+name = "advent-of-code"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Dominik Bartsch", email = "dominik.bartsch@gmx.net" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+advent-of-code = "advent_of_code:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
