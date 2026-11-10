@@ -7,7 +7,9 @@ authors = [
     { name = "Dominik Bartsch", email = "dominik.bartsch@gmx.net" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "numpy>=2.5.4",
+]
 
 [project.scripts]
 aoc = "advent_of_code:main"
