@@ -2,7 +2,6 @@ from pathlib import Path
 import importlib
 from argparse import ArgumentParser, ArgumentTypeError
 
-
 def load_input(year: int, day: int) -> str:
     with open(f"input/{year}/{day:02}.txt") as f:
         return f.read().strip()
@@ -12,8 +11,18 @@ def run(year: int, day: int):
     try:
         module = importlib.import_module(f"advent_of_code.aoc_{year}.day{day:02}")
     except ModuleNotFoundError:
-        print(f"Error: Solution for {day:02}.12.{year} not found")
-        return
+        print(f"Solution for {day:02}.12.{year} not found, creating day{day:02}.py")
+        with open(Path(f"src/advent_of_code/aoc_{year}/day{day:02}.py"), "w") as file:
+            file.write(f"""# day{day:02}.py
+
+def part1(data: str) -> int:
+    pass
+
+
+def part2(data: str) -> int:
+    pass
+""")
+            return
 
     try:
         data = load_input(year, day)
